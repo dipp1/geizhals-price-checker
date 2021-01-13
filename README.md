@@ -2,13 +2,13 @@
 
 ## About
 ### Authors/Contributors
-Tiberiu-Arthur Nowotny
+Tiberiu-Arthur Nowotny,
 Diana Buraczewska
 
 ### Description
-> What does this script do?
 This script will take a link of a specific Geizhals product cathegory and will check if there is a product matching your asking price.
 
+### Main focus of this project
 This "project" contains/will implement/focus on:
 * WebScraping the table of a Geizhals cathegory and comparing prices
 * Usage of RegEx
