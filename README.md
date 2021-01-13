@@ -2,8 +2,8 @@
 
 ## About
 ### Authors/Contributors
-Tiberiu-Arthur Nowotny,
-Diana Buraczewska
+Tiberiu-Arthur Nowotny<br>
+Diana Buraczewska<br>
 
 ### Description
 This script will take a link of a specific Geizhals product cathegory and will check if there is a product matching your asking price.
