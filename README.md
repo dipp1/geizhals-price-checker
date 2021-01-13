@@ -1,0 +1,1 @@
+# geizhals-price-checker
