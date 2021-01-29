@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-
+from urllib.request import Request, urlopen
 
 
 
@@ -40,11 +40,16 @@ link = 'https://geizhals.at/?cat=monlcd19wide&xf=11939_23~11955_IPS~11963_144~14
 # with request.urlopen(link, headers={'User-Agent': 'Mozilla/5.0'}) as response:
 #     data = response.read()
 #
+def get_webSite():
+    req = Request(link, headers={'User-Agent': 'Mozilla/5.0'})
+    return  urlopen(req).read()
 
-from urllib.request import Request, urlopen
 
-req = Request(link, headers={'User-Agent': 'Mozilla/5.0'})
-webpage = urlopen(req).read()
 
+
+
+webpage = get_webSite() # Contains all HTML from the site
 
 print(webpage.decode('utf8'))
+
+
