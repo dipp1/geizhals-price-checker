@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 from urllib.request import Request, urlopen
+from html5_parser import parse
+from lxml.etree import tostring
 
 
 
@@ -49,6 +51,8 @@ def get_webSite():
 
 
 webpage = get_webSite() # Contains all HTML from the site
+
+
 
 print(webpage.decode('utf8'))
 
