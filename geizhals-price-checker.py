@@ -38,7 +38,10 @@ def read_config_from_file(path):
     with open(path, 'r') as f:
         for line in f:
             key, value = re.split(', ', line)
-            c[key] = value
+            if key == 'smtp_port':
+                c[key] = int(value)
+            else:
+                c[key] = value
 
     return c
 
