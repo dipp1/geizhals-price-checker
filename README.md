@@ -14,7 +14,19 @@ This project focus on:
 
 
 ## Installation/Prerequisites for your repository
-[Nothing here (yet)]
+To use this script you need to install the following libraries:
+* lxml
+* win10toast
+* wintoast
+
+You install them by opening up cmd in administrator mode and then typing
+```
+pip install [the library you want]
+```
+example:
+```
+pip install lxml
+```
 
 ## Run/Execute
 [Nothing here (yet)]
