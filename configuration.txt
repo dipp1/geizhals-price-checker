@@ -1,5 +1,5 @@
 sender, python-testscript@gmx.at
-smtp_user, max.nowotny.512@gmail.com
+smtp_user, python-testscript@gmx.at
 smtp_pass, MeinPasswort1!
 smtp_host, mail.gmx.net
 smtp_port, 587

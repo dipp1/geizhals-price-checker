@@ -46,9 +46,7 @@ def read_config_from_file(path):
     return c
 
 
-def check_for_product(products, messenger, recipient=None):
-    if recipient is None:
-        recipient = messenger.sender
+def check_for_product(products, messenger, recipient='max.nowotny.512@gmail.com'):
 
     error = False
 
