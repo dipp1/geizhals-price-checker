@@ -1,5 +1,5 @@
-BeispielSender@email.com
-BeispielPassword123
-BeispielEmpfänger@empfang.com
-Beispielhost-host.com
-587
+sender, BeispielSender@email.com
+smtp_user, BeispielEmpfänger@empfang.com
+smtp_pass, BeispielPassword123
+smtp_host, Beispielhost-host.com
+smtp_port, 587
