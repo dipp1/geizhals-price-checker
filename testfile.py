@@ -4,6 +4,7 @@ Authors: Tiberiu-Arthur Nowotny, Buraczewska Diana
 Purpose of this script: Reads geizhals links and checks for required prices periodically
 Last updaten on:
 '''
+import re
 from urllib.request import Request, urlopen
 from lxml import html
 import urllib.error
@@ -63,16 +64,30 @@ def get_webSite(link):  # returns a HTML page which can be read by the xPath
     return html.fromstring(urlopen(req).read())
 
 
+def read_products_from_file(path):
+    pattern = re.compile(r'^(?:[1-9]\d*|0)?(?:\.\d+)?, https?://[^\s<>"]+|www\.[^\s<>"]+$')
+
+    d = {'target_prices': [], 'urls': []}
+    with open(path, 'r') as f:
+        for line in f:
+            if pattern.match(line):
+                price, url = re.split(', ', line)
+                d['target_prices'].append(float(price))
+                d['urls'].append(url)
+
+    return d
+
 
 def main():
-    aList = []
-    aList.append(Product(200, "https://geizhals.at/?cat=monlcd19wide&xf=11939_23~11955_IPS~11963_144~14591_19201080&asuch=&bpmin=&bpmax=&v=e&hloc=at&plz=&dist=&mail=&sort=p&bl1_id=30#productlist"))
-    aList.append(Product(600.50, "https://geizhals.at/?cat=monlcd19wide&v=e&hloc=at&sort=p&bl1_id=30&xf=11939_23%7E11955_IPS%7E11963_240%7E14591_19201080"))
-    aList.append(Product(700.50, "https://geizhals.at/?cat=cpuamdam4&xf=25_6%7E5_PCIe+4.0%7E5_SMT%7E820_AM4"))
-    # aList.append(Product(700.50, "https://geizhals.at/?cat=cpuamdam4&xf=25_6%7E5_PCIe+4.0%7E5_SMT%7E820_AM4"))
-    # aList.append(Product(150.50, "https://geizhals.at/"))
-    #Liste an Produkten wurde generiert
-    checkForProduct(aList)
+    data = read_products_from_file('price_list.txt')
+    target_prices = data['target_prices']
+    urls = data['urls']
+
+    products = []
+    for target_price, url in zip(target_prices, urls):
+        products.append(Product(target_price, url))
+
+    checkForProduct(products)
 
 
 def checkForProduct(aList):
