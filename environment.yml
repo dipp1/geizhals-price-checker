@@ -1,4 +1,4 @@
-name: geizhals-price-checker
+name: geizhals_price_checker
 
 channels:
   - default
