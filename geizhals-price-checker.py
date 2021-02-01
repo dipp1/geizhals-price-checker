@@ -17,39 +17,6 @@ from geizhals_price_checker.product import Product
 if platform.system() == 'Windows':
     from win10toast import ToastNotifier
 
-'''TODO DIANA
-Create file configuration
-Read file and create a list / array of links
-Implement save config method
-
-config example
-
-[Geizhals Links]
-15.99, geizhals.at/....
-312.50,geizhals.at/....
-250, geizhals.at/....
-etc.
-'''
-
-'''TODO Arthur
-
-Create method to iterate over list /array
-Get html site and search for matching price in geizhals table
-
-'''
-
-'''
-
-
-
-Zuerst File eingelesen
-
-Zuerst überprüfen ob link gültig
-Objekt erstellen -> wenn irgendwo index 0 -> objekt nicht erstellen
-
-
-'''
-
 
 def read_products_from_file(path):
     pattern = re.compile(r'^(?:[1-9]\d*|0)?(?:\.\d+)?, https?://[^\s<>"]+|www\.[^\s<>"]+$')
