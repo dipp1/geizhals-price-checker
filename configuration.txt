@@ -1,5 +1,5 @@
-sender, BeispielSender@email.com
-smtp_user, BeispielEmpfänger@empfang.com
-smtp_pass, BeispielPassword123
-smtp_host, Beispielhost-host.com
+sender, python-testscript@gmx.at
+smtp_user, max.nowotny.512@gmail.com
+smtp_pass, MeinPasswort1!
+smtp_host, mail.gmx.net
 smtp_port, 587

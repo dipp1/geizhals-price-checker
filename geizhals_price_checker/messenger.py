@@ -3,9 +3,7 @@
 import platform
 from email.message import EmailMessage
 from smtplib import SMTP
-
-if platform.system() == 'Windows':
-    from win10toast import ToastNotifier
+from win10toast import ToastNotifier
 
 
 class Messenger(object):
