@@ -139,10 +139,10 @@ def checkForProduct(aList):
 
 
 def sendMail(productName, productPrice, productLink):
-    sender = 'python-testscript@gmx.at'
-    recipient = 'tiberiu.arthur@gmail.com'
+    sender = 'senderEmail'
+    recipient = 'empfängerEmail'
     smtp_user = sender
-    smtp_pass = "MeinPasswort1!"
+    smtp_pass = "Passwort"
     smtp_host = "mail.gmx.net"
     smtp_port = "587"
 
