@@ -100,7 +100,6 @@ def main():
 
     products = []
     for target_price, url in zip(target_prices, urls):
-        print(target_price, url)
         products.append(Product(target_price, url))
 
     config = read_config_from_file('configuration.txt')
