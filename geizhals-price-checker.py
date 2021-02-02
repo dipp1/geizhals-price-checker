@@ -10,12 +10,10 @@ import platform
 import re
 import time
 import urllib.error
+from win10toast import ToastNotifier
 
 from geizhals_price_checker.messenger import Messenger
 from geizhals_price_checker.product import Product
-
-if platform.system() == 'Windows':
-    from win10toast import ToastNotifier
 
 
 def read_products_from_file(path):
@@ -67,26 +65,19 @@ def check_for_product(products, messenger, recipient='max.nowotny.512@gmail.com'
                 # -----Getting Website Stuff
 
                 if product.target_price >= price:  # If a product with a good price exists, then send me E-mail
-                    print(f"PREISALARM: {name} ist gerade für {price}€ zu haben!")
-                    # messenger.send_mail(recipient, name, price, link)  # Calls function to send email WORKS
-                    print("Mail sent ;)")
+                    # print(f"PREISALARM: {name} ist gerade für {price}€ zu haben!")
+                    messenger.send_mail(recipient, name, price, link)  # Calls function to send email WORKS
+                    # print("Mail sent ;)")
                     time.sleep(3)
 
-            except urllib.error.URLError:
+            except urllib.error.URLError: # When Internet is down or site returns a 404 this exception is triggered and stops the script
                 error = True
-                if platform.system() == 'Windows':
-                    toaster = ToastNotifier()
-                    toaster.show_toast("Geizhals-price-checker error", f"Netzwerkfehler: Konnte keine Informationen "
-                                                                       f"aus dem Internet Laden! Script beendet.",
-                                       duration=10, threaded=True)
+                toaster = ToastNotifier()
+                toaster.show_toast("Geizhals-price-checker error", f"Netzwerkfehler: Konnte keine Informationen aus dem Internet Laden, oder Seite returnt 404 Status! Script beendet.", duration=10, threaded=True)
                 break
-            except IndexError:
-                if platform.system() == 'Windows':
-                    toaster = ToastNotifier()
-                    toaster.show_toast("Geizhals-price-checker error", f"Seiten Ladefehler: Konnte keine "
-                                                                       f"Informationen für Link {product.url} aus "
-                                                                       f"dem Internet Laden! Überprüfe die Links!",
-                                       duration=240, threaded=True)
+            except IndexError: #When a wrong link is being read or a category has 0 products, this exception will be triggered
+                toaster = ToastNotifier()
+                toaster.show_toast("Geizhals-price-checker error", f"Seiten Ladefehler: Konnte keine Informationen für Link {product.url} aus dem Internet Laden! Überprüfe die Links!", duration=240, threaded=True)
         if (error == False):
             print("Sleep for one hour")
             time.sleep(3600)  # stops the script and waits one hour before polling again
