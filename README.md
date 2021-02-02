@@ -29,6 +29,14 @@ example:
 pip install lxml
 ```
 
+Alternatively, if you use conda, simply run
+```
+conda env create -f environment.yml
+```
+This will create the conda environment geizhals-price-checker
+including all dependencies.
+
+
 ## Run/Execute
 To run the program you'll need to follow the following steps: <br>
 1. Go to [Geizhals.at](https://geizhals.at)<br>
@@ -71,6 +79,7 @@ This kind of information can be found on DuckDuckGo or just contact your interne
 ## Known Issues
 * The library "win10toast" is currently missing out on updates and will make this script crash if invalid configuration data is provided.
 * Sometimes the "win10toast" library will crash the script if multiple windows notifications get generated
+* The library "win10toast" is windows only. The script runs without the library. However, note that you have to remove that dependency from environment.yml if you do not use Windows.
 
 ## Useful links
 [Pandao markdown editor ](https://pandao.github.io/editor.md/en.html)<br>
