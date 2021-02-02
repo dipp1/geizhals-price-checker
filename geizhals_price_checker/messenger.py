@@ -3,7 +3,9 @@
 import platform
 from email.message import EmailMessage
 from smtplib import SMTP
-from win10toast import ToastNotifier
+
+if platform.system() == 'Windows':
+    from win10toast import ToastNotifier
 
 
 class Messenger(object):
@@ -11,7 +13,7 @@ class Messenger(object):
 
     def __init__(self, config):
         self.sender = config['sender']
-        self.smtp_user = config['smtp_user']
+        self.smtp_user = config['sender']
         self.smtp_pass = config['smtp_pass']
         self.smtp_host = config['smtp_host']
         self.smtp_port = config['smtp_port']
