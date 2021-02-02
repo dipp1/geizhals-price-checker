@@ -1,6 +1,0 @@
-sender, testsender@sender.at
-smtp_user, python-testscript2@gmx.at // DELETE -> smtpUser = sender!
-recipient, empfänger@mail.com
-smtp_pass, SenderPasswort
-smtp_host, mail.gmx.net
-smtp_port, 587
