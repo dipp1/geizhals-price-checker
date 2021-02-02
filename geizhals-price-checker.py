@@ -108,13 +108,17 @@ def main():
 
     # Parser to read email configuration from command line. run python geizhals-price-checker.py --help to get help.
     parser = argparse.ArgumentParser()
-    parser.add_argument('--sender', type=str, required=True, help='E-Mail address of sender.')
-    parser.add_argument('--recipient', type=str, required=True, help='E-Mail address of recipient.')
-    parser.add_argument('--smtp_pass', type=str, required=True, help='Password of sender E-Mail.')
+    parser.add_argument('--read_config_from_file', type=int, default=1, choices=[0, 1])
+    parser.add_argument('--sender', type=str, help='E-Mail address of sender.')
+    parser.add_argument('--recipient', type=str, help='E-Mail address of recipient.')
+    parser.add_argument('--smtp_pass', type=str, help='Password of sender E-Mail.')
     parser.add_argument('--smtp_host', default='mail.gmx.net', type=str, help='Sender E-Mail host (default: '
                                                                               'mail.gmx.net).')
     parser.add_argument('--smtp_port', default=587, type=int, help='SMTP port to use (default: 587).')
     args = parser.parse_args()
+
+    if (args.sender is None or args.recipient is None or args.smtp_pass is None) and args.read_config_from_file == 0:
+        raise ValueError('Please provide `sender`, `recipient`, and `smtp_pass` if `read_config_from_file=0`.')
 
     data = read_products_from_file('price_list.txt')
     target_prices = data['target_prices']
@@ -124,9 +128,12 @@ def main():
     for target_price, url in zip(target_prices, urls):
         products.append(Product(target_price, url))
 
-    config = {'sender': args.sender, 'recipient': args.recipient,
-              'smtp_pass': args.smtp_pass, 'smtp_host': args.smtp_host, 'smtp_port': args.smtp_port}
-    print(config)
+    if args.read_config_from_file:
+        config = read_config_from_file('configuration.txt')
+    else:
+        config = {'sender': args.sender, 'recipient': args.recipient,
+                  'smtp_pass': args.smtp_pass, 'smtp_host': args.smtp_host, 'smtp_port': args.smtp_port}
+
     messenger = Messenger(config)
 
     check_for_product(products, messenger, recipient=config['recipient'])

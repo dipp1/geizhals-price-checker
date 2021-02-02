@@ -1,0 +1,5 @@
+sender, user1@mail.com
+recipient, user2@mail.com
+smtp_pass, 1234
+smtp_host, mail.com
+smtp_port, 587
