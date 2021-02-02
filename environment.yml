@@ -1,8 +1,10 @@
-name: geizhals_price_checker
+name: geizhals-price-checker
 
 channels:
   - default
+  - conda-forge
 
 dependencies:
   - python=3.8
   - lxml=4.6
+  - win10toast=0.9
