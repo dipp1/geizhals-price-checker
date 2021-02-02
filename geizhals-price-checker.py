@@ -68,7 +68,8 @@ def check_for_product(products, messenger, recipient='max.nowotny.512@gmail.com'
 
                 if product.target_price >= price:  # If a product with a good price exists, then send me E-mail
                     print(f"PREISALARM: {name} ist gerade für {price}€ zu haben!")
-                    messenger.send_mail(recipient, name, price, link)  # Calls function to send email WORKS
+                    # messenger.send_mail(recipient, name, price, link)  # Calls function to send email WORKS
+                    print("Mail sent ;)")
                     time.sleep(3)
 
             except urllib.error.URLError:
@@ -86,10 +87,11 @@ def check_for_product(products, messenger, recipient='max.nowotny.512@gmail.com'
                                                                        f"Informationen für Link {product.url} aus "
                                                                        f"dem Internet Laden! Überprüfe die Links!",
                                        duration=240, threaded=True)
-
-        print("Sleep for one hour")
-        time.sleep(3600)  # stops the script and waits one hour before polling again
-
+        if (error == False):
+            print("Sleep for one hour")
+            time.sleep(3600)  # stops the script and waits one hour before polling again
+        # else:
+        #     print("Error and script stops")
 
 def main():
     data = read_products_from_file('price_list.txt')

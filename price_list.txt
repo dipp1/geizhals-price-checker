@@ -1,3 +1,4 @@
 350.60, https://geizhals.at/?cat=monlcd19wide&xf=11939_23~11955_IPS~11963_144~14591_19201080&asuch=&bpmin=&bpmax=&v=e&hloc=at&plz=&dist=&mail=&sort=p&bl1_id=30#productlist
-200, https://geizhals.at/?cat=monlcd19wide&v=e&hloc=at&sort=p&bl1_id=30&xf=11939_23%7E11955_IPS%7E11963_240%7E14591_19201080
-700, https://geizhals.at/?cat=cpuamdam4&xf=25_6%7E5_PCIe+4.0%7E5_SMT%7E820_AM4
+500, https://geizhals.at/?cat=monlcd19wide&v=e&hloc=at&sort=p&bl1_id=30&xf=11939_23%7E11955_IPS%7E11963_240%7E14591_19201080
+250, https://geizhals.at/?cat=umtsover&xf=10063_11.0%7E152_6.2%7E162_64bit-CPU
+250, https://geizhals.at/?cat=ungültiger-link

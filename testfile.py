@@ -120,7 +120,8 @@ def checkForProduct(aList):
 
                 if (produktListObject.askPrice >= price): # If a product with a good price exists, then send me E-mail
                     print(f"PREISALARM: {name} ist gerade für {price}€ zu haben!")
-                    sendMail(name, price, link) # Calls function to send email WORKS
+                    # sendMail(name, price, link) # Calls function to send email WORKS
+                    print("Email sent :)")
                     time.sleep(3)
 
 
@@ -141,9 +142,9 @@ def checkForProduct(aList):
             i += 1 # auti increment of our counter variable for our for loop
         i = 0 # Sets our i for the "for loop" to 0 after being done with the loop, so that it can restart when the while loop restarts
 
-        # print("Sleep for one hour")
-        # time.sleep(3600) # stops the script and waits one hour before polling again
-        time.sleep(8)
+        print("Sleep for one hour")
+        time.sleep(3600) # stops the script and waits one hour before polling again
+        # time.sleep(3600)
 
 
 
