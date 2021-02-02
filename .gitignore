@@ -1,4 +1,5 @@
 /.idea
 /venv
 /ScriptsSchwab
+/geizhals_price_checker/__pycache__/
 Pipfile
