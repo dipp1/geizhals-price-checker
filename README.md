@@ -56,11 +56,11 @@ You can add as many links as you want to this file. Just make sure that they com
    * Open up the configuration.txt in Notepad or similiar text editor
    * Now you'll see this: 
 ```
-sender, testsender@sender.at
-recipient, empfänger@mail.com
-smtp_pass, SenderPasswort
+sender, sender.email@mail.com
+recipient, recipient.email@mail.com
+smtp_pass, SenderPassword
 smtp_host, smtp-host.of-sender.net
-smtp_port, 123
+smtp_port, 587
 ```
 Now just replace the placeholders with the right credentials of your E-Mail addresses, smtp host and port and you're good to go!<br>
 

@@ -1,5 +1,5 @@
-sender, user1@mail.com
-recipient, user2@mail.com
-smtp_pass, 1234
-smtp_host, mail.com
+sender, sender.email@mail.com
+recipient, recipient.email@mail.com
+smtp_pass, SenderPassword
+smtp_host, smtp-host.of-sender.net
 smtp_port, 587
