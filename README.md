@@ -50,7 +50,8 @@ for example:
 ```
 210.36, https://geizhals.at/?cat=cpuamdam4&xf=25_6%7E2_7nm%7E4_65%7E6679_12%7E820_AM4
 ```
-You can add as many links as you want to this file. Just make sure that they comply with this format.
+You can add as many links as you want to this file. Just make sure that they comply with this format.<br>
+<b>NOTE: The list contains a few examples already. You can safely replace them. </b>
 
 7. Now it's time to configure the E-Mail functionality: 
    * Open up the configuration.txt in Notepad or similiar text editor
