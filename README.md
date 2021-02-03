@@ -43,7 +43,7 @@ To run the program you'll need to follow the following steps: <br>
 2. Select a Product category <br>
 3. Select the properties of the products you're looking for <br>
 4. Click on "Sortieren nach" (sort by) "Bestpreis" (best price) <br>
-5. Now copy the link from your browser and open the Preisliste.txt file <br>
+5. Now copy the link from your browser and open the price_list.txt file <br>
 6. Insert the price you're looking for and the link of the product category. <br>
 If the desired price contains a decimal point, use a dot instead. <br>Separate price and link with a decimal.<br>
 for example:
